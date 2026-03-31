@@ -1,0 +1,25 @@
+workflows:
+  android-workflow:
+    name: Android APK Build
+    max_build_duration: 60
+    environment:
+      vars:
+        GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      android:
+        gradle: 7.6
+        sdk: 33
+        build_tools: 33.0.2
+    scripts:
+      - name: Build APK
+        script: |
+          ./gradlew clean
+          ./gradlew assembleRelease
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - abhinavrajput7037@gmail.com
