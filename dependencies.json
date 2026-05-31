@@ -1,8 +1,0 @@
-{
-  "core": "2.7.32",
-  "plugins": {
-    "onesignal": "1.0.4",
-    "lottie": "1.0.4"
-  },
-  "engineVersion": "1.1.21"
-}
